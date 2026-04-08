@@ -13,6 +13,11 @@ find_package(rclcpp REQUIRED)
 # 1. Add executable using src/hello_node.cpp
 # 2. Add dependencies (ament_target_dependencies) for rclcpp
 # 3. Install the target to the DESTINATION lib/${PROJECT_NAME}
+add_executable(hello_node src/hello_node.cpp)
+ament_target_dependencies(hello_node rclcpp)
+install(TARGETS 
+hello_node
+DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
